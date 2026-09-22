@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>F16 Styrkeprogram</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="F16 Styrka">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0F141B">
+<link rel="apple-touch-icon" href="data:image/png;base64,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QFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFACABCUAAAEJQAAQQkAQFD/H9/7Ckt5EsFnAAAAAElFTkSuQmCC">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F141B;
+    --surface:#161E29;
+    --surface-2:#1D2635;
+    --line:#2A3546;
+    --text:#EAEDF2;
+    --text-dim:#8D98A8;
+    --l1:#4FA7D9;
+    --l2:#E8A33D;
+    --l3:#E1544F;
+    --accent-soft:rgba(232,163,61,0.12);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:48px;
+  }
+  h1,h2,h3,.disp{font-family:'Oswald',sans-serif;letter-spacing:0.01em;}
+  .wrap{max-width:480px;margin:0 auto;padding:0 14px;}
+
+  header{
+    position:sticky;top:0;z-index:20;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    padding-top:14px;
+  }
+  .titlebar{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;}
+  .titlebar h1{font-size:20px;font-weight:700;margin:0;color:var(--text);}
+  .titlebar .sub{font-size:11px;color:var(--text-dim);font-weight:500;}
+  nav.tabs{display:flex;gap:0;margin-bottom:0;}
+  nav.tabs button{
+    flex:1;background:none;border:none;color:var(--text-dim);
+    font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;
+    padding:10px 0;cursor:pointer;border-bottom:2px solid transparent;
+  }
+  nav.tabs button.active{color:var(--text);border-bottom:2px solid #fff;}
+
+  .levelbar{display:flex;gap:6px;padding:10px 0;}
+  .levelbtn{
+    flex:1;text-align:center;padding:9px 4px;border-radius:3px;
+    border:1px solid var(--line);background:var(--surface);
+    font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;
+    color:var(--text-dim);cursor:pointer;
+  }
+  .levelbtn small{display:block;font-family:'Inter';font-weight:400;font-size:9px;margin-top:2px;letter-spacing:0.02em;}
+  .levelbtn[data-l="1"].active{background:var(--l1);border-color:var(--l1);color:#06111a;}
+  .levelbtn[data-l="2"].active{background:var(--l2);border-color:var(--l2);color:#1a0f00;}
+  .levelbtn[data-l="3"].active{background:var(--l3);border-color:var(--l3);color:#1a0403;}
+
+  .passbar{display:flex;gap:6px;padding-bottom:10px;}
+  .passbtn{
+    flex:1;text-align:center;padding:7px 4px;border-radius:3px;
+    border:1px solid var(--line);background:transparent;
+    font-family:'Inter';font-size:12px;font-weight:600;color:var(--text-dim);cursor:pointer;
+  }
+  .passbtn.active{border-color:#fff;color:var(--text);}
+
+  .rulesnote{font-size:11px;color:var(--text-dim);padding:8px 0 4px;line-height:1.5;}
+  .rulesnote b{color:var(--text);}
+
+  .passtitle{padding:14px 0 4px;}
+  .passtitle h2{font-size:16px;margin:0 0 3px;color:var(--text);}
+  .passtitle p{font-size:12px;color:var(--text-dim);margin:0;line-height:1.4;}
+
+  .block{margin:16px 0;border-left:2px solid var(--line);padding-left:12px;position:relative;}
+  .block.superset{border-left-color:#3A465B;}
+  .blockhead{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+  .blockhead h3{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-dim);margin:0;font-weight:600;font-family:'Inter';}
+  .ssbadge{font-size:9px;color:#3A465B;border:1px solid #3A465B;padding:1px 6px;border-radius:20px;font-family:'Inter';letter-spacing:0.03em;}
+  .blocknote{font-size:11px;color:var(--text-dim);margin:-4px 0 8px;font-style:italic;}
+
+  .exercise{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:12px;
+    margin-bottom:10px;
+  }
+  .exercise .exname{font-size:14px;font-weight:600;margin-bottom:2px;}
+  .exercise .excomment{font-size:11px;color:var(--text-dim);margin-bottom:9px;line-height:1.4;}
+  .opts{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
+  .opt{
+    font-size:12px;padding:6px 10px;border-radius:20px;
+    border:1px solid var(--line);background:var(--surface-2);
+    color:var(--text-dim);cursor:pointer;line-height:1.3;
+  }
+  .opt.only{cursor:default;}
+  .opt.chosen{border-color:currentColor;color:var(--text);background:var(--accent-soft);}
+  .scheme{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;margin-bottom:10px;}
+
+  .nolognote{
+    font-size:11px;color:var(--text-dim);padding:8px 0 0;border-top:1px solid var(--line);margin-top:2px;
+  }
+
+  .setrows{margin-bottom:8px;}
+  .setrow{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+  .setrow .setlabel{width:38px;font-size:11px;color:var(--text-dim);flex-shrink:0;}
+  .setrow input{
+    width:64px;background:var(--surface-2);border:1px solid var(--line);
+    color:var(--text);font-size:14px;padding:7px 8px;border-radius:3px;
+    font-family:'Inter';text-align:center;
+  }
+  .setrow input::placeholder{color:#4A5568;}
+  .savebtnrow{display:flex;justify-content:flex-end;}
+  .save-btn{
+    background:#fff;color:#0F141B;border:none;
+    font-family:'Oswald';font-weight:600;font-size:12px;
+    padding:8px 16px;border-radius:3px;cursor:pointer;
+  }
+  .save-btn:active{opacity:0.7;}
+  .lastlog{font-size:11px;color:var(--text-dim);margin-top:8px;padding-top:8px;border-top:1px solid var(--line);line-height:1.5;}
+  .lastlog b{color:var(--text);font-weight:600;}
+  .savedflash{color:#7FD99A !important;}
+
+  .rulesbox{
+    margin:20px 0 8px;padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:2px;
+  }
+  .rulesbox summary{font-family:'Oswald';font-size:13px;font-weight:600;cursor:pointer;color:var(--text);}
+  .rulesbox ul{margin:10px 0 0;padding-left:18px;font-size:12px;color:var(--text-dim);line-height:1.6;}
+  .rulesbox li{margin-bottom:6px;}
+
+  .histday{margin:18px 0;}
+  .histday h3{font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-dim);margin:0 0 8px;font-weight:600;}
+  .histentry{
+    padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;
+  }
+  .histentry .hn{font-weight:500;}
+  .histentry .hn small{display:block;color:var(--text-dim);font-size:11px;margin-top:2px;}
+  .histentry .hv{font-family:'Oswald';font-weight:600;font-size:13px;margin-top:4px;}
+  .emptystate{padding:40px 10px;text-align:center;color:var(--text-dim);font-size:13px;line-height:1.6;}
+
+  .histactions{display:flex;gap:8px;margin:14px 0 4px;}
+  .histactions button, .histactions label{
+    flex:1;text-align:center;font-size:12px;font-weight:600;font-family:'Inter';
+    border:1px solid var(--line);background:var(--surface);color:var(--text-dim);
+    padding:9px 0;border-radius:3px;cursor:pointer;
+  }
+  .histactions input[type=file]{display:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="titlebar">
+      <h1>F16 Styrkeprogram</h1>
+      <span class="sub">2 pass · 3 nivåer</span>
+    </div>
+    <nav class="tabs">
+      <button data-tab="program" class="active">Program</button>
+      <button data-tab="logg">Logg</button>
+    </nav>
+    <div id="levelPassBar"></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="programView"></div>
+  <div id="loggView" style="display:none;"></div>
+</div>
+
+<script>
+const PROGRAM = {
+  A: {
+    title: "Pass A — Helkropp, underkroppsfokus",
+    subtitle: "Knäböj- och gångmönster, grunddragstyrka, höft/hamstring-kontroll, knä-/ljumskeprehab.",
+    blocks: [
+      { id:'a-warmup', title:'Uppvärmning — prehab & aktivering', note:'Samma varje gång, oavsett nivå.', superset:false,
+        exercises:[
+          {id:'enbensbalans', name:'Enbensbalans / knäkontroll', comment:'Knäkontroll inför huvudövningarna.',
+            levels:{1:{opts:['Enbensknäböj till låda, kroppsvikt'],scheme:'2×6/ben, kontrollerat'},
+                    2:{opts:['Enbensknäböj (fri), lätt hantel'],scheme:'2×6/ben, kontrollerat'},
+                    3:{opts:['Enbensknäböj (fri), hantel'],scheme:'2×6/ben, kontrollerat'}}},
+          {id:'ljumske', name:'Ljumske / adduktorer', comment:'Bygger adduktorstyrka — skyddar ljumsken.',
+            levels:{1:{opts:['Copenhagen Plank, knästöd'],scheme:'2×10–15 sek/sida'},
+                    2:{opts:['Copenhagen Plank, fullt utförande'],scheme:'2×20–25 sek/sida'},
+                    3:{opts:['Copenhagen Plank, fullt utförande'],scheme:'2×20–25 sek/sida'}}},
+          {id:'landning', name:'Landning / balans', comment:'Kort landnings- och balansaktivering.', noLog:true,
+            levels:{1:{opts:['Låg hopplandning, mjukt nedslag'],scheme:'2×4'},
+                    2:{opts:['Y-balans eller Box-drop'],scheme:'2 varv/ben resp. 2×4'},
+                    3:{opts:['Y-balans eller Box-drop'],scheme:'2 varv/ben resp. 2×4'}}},
+        ]},
+      { id:'a-A', title:'A1/A2 — Tvåbensövning + kontrast', superset:true,
+        exercises:[
+          {id:'A1', name:'A1 · Tvåbensövning', comment:'Nivå 3 följer damlagets belastningsmål rakt av på huvudlyftet.',
+            levels:{1:{opts:['Goblet Squat (kettlebell/hantel)','Kroppsviktsknäböj (tempokontrollerat)'],scheme:'2–3×8–10 @ 3–4 RIR'},
+                    2:{opts:['Trap Bar-marklyft','Knäböj med skivstång / Frontböj'],scheme:'3–4×5–8, bygg mot 2–3 RIR'},
+                    3:{opts:['Trap Bar-marklyft','Back Squat / Front Squat'],scheme:'4×3–5, bygg mot 1–2 RIR'}}},
+          {id:'A2', name:'A2 · Kontrast/hopp', comment:'Nivå 2–3 kör i superset direkt efter A1.', noLog:true,
+            levels:{1:{opts:['Låg boxhopp, mjuk landning, teknikfokus'],scheme:'2×5'},
+                    2:{opts:['Boxhopp / Countermovement Jump'],scheme:'3×3–5, max explosivitet'},
+                    3:{opts:['Trap Bar Jump / KB Jump Squat @20–30%'],scheme:'3×3, max explosivitet'}}},
+        ]},
+      { id:'a-B', title:'B1/B2 — Press + enbensövning', superset:true,
+        exercises:[
+          {id:'B1', name:'B1 · Pressövning', comment:'Samma rörelse som damlagets B1 i Pass 2.',
+            levels:{1:{opts:['Knästående/liggande hantelpress, lätt','Push-ups mot box/knä'],scheme:'2–3×8–10 @ 3–4 RIR'},
+                    2:{opts:['Bänkpress med hantlar/skivstång'],scheme:'3–4×6–8, bygg mot 2–3 RIR'},
+                    3:{opts:['Bänkpress med hantlar/skivstång'],scheme:'3–4×6–8, bygg mot 2–3 RIR'}}},
+          {id:'B2', name:'B2 · Enbensövning', comment:'Unilateral benstyrka och knäkontroll.',
+            levels:{1:{opts:['Stationärt utfall, kroppsvikt'],scheme:'2–3×5–6/ben @ 3–4 RIR'},
+                    2:{opts:['Bulgarian Split Squat','Utfall bakåt med hantlar'],scheme:'3×6–8/ben, bygg mot 2–3 RIR'},
+                    3:{opts:['Bulgarian Split Squat','Utfall bakåt med hantlar'],scheme:'3×6–8/ben, bygg mot 2–3 RIR'}}},
+        ]},
+      { id:'a-C', title:'C1/C2 — Drag + höft/hamstring', superset:true,
+        exercises:[
+          {id:'C1', name:'C1 · Dragövning', comment:'Övre ryggens dragstyrka, balans mot pressövningen.',
+            levels:{1:{opts:['Rodd i gummiband eller lätt kabel'],scheme:'2–3×10–12 @ 3–4 RIR'},
+                    2:{opts:['Kabelroddning','Hantelroddning','Chins med bandassistans'],scheme:'3×8–10, bygg mot 2–3 RIR'},
+                    3:{opts:['Kabelroddning','Hantelroddning','Chins med bandassistans'],scheme:'3×8–10, bygg mot 2–3 RIR'}}},
+          {id:'C2', name:'C2 · Höft/hamstring', comment:'Fokus säte/hamstring — samma mönster som damlagets B2.',
+            levels:{1:{opts:['Höftlyft (glute bridge), kroppsvikt'],scheme:'2–3×10–12 @ 3–4 RIR'},
+                    2:{opts:['Hip Thrust med vikt','Single Leg RDL, lätt hantel'],scheme:'3×8–10, bygg mot 2–3 RIR'},
+                    3:{opts:['Hip Thrust med vikt','Single Leg RDL, lätt hantel'],scheme:'3×8–10, bygg mot 2–3 RIR'}}},
+        ]},
+      { id:'a-D', title:'D1 — Bål', superset:false,
+        exercises:[
+          {id:'D1', name:'D1 · Bål', comment:'Bålkontroll och stabilitet.',
+            levels:{1:{opts:['Planka-variant (knä eller rak kropp)'],scheme:'2–3×20–30 sek'},
+                    2:{opts:['Pallof press, lätt','Dead bug'],scheme:'2–3×8–10'},
+                    3:{opts:['Pallof press + rotation med lätt medicinboll'],scheme:'2–3×8–10'}}},
+        ]},
+      { id:'a-cooldown', title:'Avslutande prehab', note:'Samma varje gång, oavsett nivå.', superset:false,
+        exercises:[
+          {id:'nordic', name:'Hamstring, excentriskt', comment:'Kärnan i skadeprevention.',
+            levels:{1:{opts:['Nordic Hamstring, band-/partnerassisterad'],scheme:'2×3–4'},
+                    2:{opts:['Nordic Hamstring'],scheme:'2×4–6'},
+                    3:{opts:['Nordic Hamstring'],scheme:'2×4–6'}}},
+          {id:'fotled', name:'Fotled / underben', comment:'Fotledsstyvhet och balans fram-/baksida underben.',
+            levels:{1:{opts:['Tåhäv, kroppsvikt'],scheme:'2×10–12'},
+                    2:{opts:['Vad- & tibialisträning, med vikt'],scheme:'2×10–12 vardera'},
+                    3:{opts:['Vad- & tibialisträning, med vikt'],scheme:'2×10–12 vardera'}}},
+        ]},
+    ]
+  },
+  B: {
+    title: "Pass B — Helkropp, överkroppsfokus",
+    subtitle: "Press- och dragmönster, axelhälsa — underkropp och bål med annan tyngdpunkt än Pass A.",
+    blocks: [
+      { id:'b-warmup', title:'Uppvärmning — prehab & axelstabilitet', note:'Samma varje gång, oavsett nivå.', superset:false,
+        exercises:[
+          {id:'facepull', name:'Skulderblad / press-drag', comment:'Skulderbladskontroll inför press/drag.',
+            levels:{1:{opts:['Facepulls, lätt gummiband'],scheme:'2×12–15'},
+                    2:{opts:['Facepulls, gummiband'],scheme:'2×15'},
+                    3:{opts:['Facepulls, gummiband'],scheme:'2×15'}}},
+          {id:'rotatorcuff1', name:'Rotatorcuff', comment:'Bygger axelhälsa — skyddar kastaxeln.',
+            levels:{1:{opts:['Extern rotation, lätt band, långsamt'],scheme:'2×8/arm'},
+                    2:{opts:['Excentrisk rotation, hantel/band'],scheme:'2×8/arm'},
+                    3:{opts:['Excentrisk rotation, hantel/band'],scheme:'2×8/arm'}}},
+          {id:'wallslides', name:'Skulderrörlighet', comment:'Rörlighet och kontroll — samma för alla nivåer.',
+            levels:{1:{opts:['Wall Slides'],scheme:'2×10'},
+                    2:{opts:['Wall Slides'],scheme:'2×10'},
+                    3:{opts:['Wall Slides'],scheme:'2×10'}}},
+        ]},
+      { id:'b-A', title:'A1/A2 — Press + kontrast/kast', superset:true,
+        exercises:[
+          {id:'A1b', name:'A1 · Pressövning', comment:'Nivå 3 speglar damlagets B1 i Power-vecka: tyngre, färre reps.',
+            levels:{1:{opts:['Push-ups mot box/knä','Liggande hantelpress, lätt'],scheme:'2–3×8–10 @ 3–4 RIR'},
+                    2:{opts:['Bänkpress med skivstång/hantlar'],scheme:'3–4×6–8, bygg mot 2–3 RIR'},
+                    3:{opts:['Bänkpress med skivstång, tyngre bas'],scheme:'3–4×4–6, bygg mot 1–2 RIR'}}},
+          {id:'A2b', name:'A2 · Kontrast/kast', comment:'Nivå 2–3 kör i superset direkt efter A1.', noLog:true,
+            levels:{1:{opts:['Medicinbollkast, lätt boll, teknikfokus'],scheme:'2×5'},
+                    2:{opts:['Medicinbollkast, kraftfullt'],scheme:'3×5, max fart'},
+                    3:{opts:['Medicinbollkast, kraftfullt'],scheme:'3×5, max fart'}}},
+        ]},
+      { id:'b-B', title:'B1/B2 — Tvåbensövning + drag', superset:true,
+        exercises:[
+          {id:'B1b', name:'B1 · Tvåbensövning', comment:'Nivå 3 håller kvar underkroppsstimulus med samma RIR-mål som damlagets huvudlyft.',
+            levels:{1:{opts:['Goblet Squat, lätt','Split Squat, kroppsvikt'],scheme:'2–3×8–10 @ 3–4 RIR'},
+                    2:{opts:['Front Squat','Bulgarian Split Squat med vikt'],scheme:'3×6–8, bygg mot 2–3 RIR'},
+                    3:{opts:['Front Squat','Back Squat, tyngre bas'],scheme:'3–4×4–6, bygg mot 1–2 RIR'}}},
+          {id:'B2b', name:'B2 · Dragövning', comment:'Dragstyrka i balans mot pressvolymen.',
+            levels:{1:{opts:['Latdrag i maskin, lätt'],scheme:'2–3×10–12 @ 3–4 RIR'},
+                    2:{opts:['Chins/Pullups (bandassisterat vid behov)','Tung rodd'],scheme:'3×6–8, bygg mot 2–3 RIR'},
+                    3:{opts:['Chins/Pullups (bandassisterat vid behov)','Tung rodd'],scheme:'3×6–8, bygg mot 2–3 RIR'}}},
+        ]},
+      { id:'b-C', title:'C1/C2 — Axel + höft/hamstring', superset:true,
+        exercises:[
+          {id:'C1b', name:'C1 · Axel', comment:'Axelhälsa och skottrelaterad styrka.',
+            levels:{1:{opts:['Y-lyft, lätt hantel'],scheme:'2–3×8–10'},
+                    2:{opts:['Y-lyft med hantlar','Axelpress'],scheme:'3×8–10, bygg mot 2–3 RIR'},
+                    3:{opts:['Y-lyft med hantlar','Axelpress'],scheme:'3×8–10, bygg mot 2–3 RIR'}}},
+          {id:'C2b', name:'C2 · Höft/hamstring', comment:'Kompletterar hinge-mönstret från Pass A.',
+            levels:{1:{opts:['Single Leg RDL, balansfokus utan vikt'],scheme:'2–3×6–8/ben'},
+                    2:{opts:['Single Leg RDL med hantel','Raka marklyft, lätt'],scheme:'3×6–8/ben, bygg mot 2–3 RIR'},
+                    3:{opts:['Single Leg RDL med hantel','Raka marklyft, lätt'],scheme:'3×6–8/ben, bygg mot 2–3 RIR'}}},
+        ]},
+      { id:'b-D', title:'D1 — Bål/rotation', superset:false,
+        exercises:[
+          {id:'D1b', name:'D1 · Rotation', comment:'Rotationskontroll och bålstyrka.',
+            levels:{1:{opts:['Rotation med lätt gummiband'],scheme:'2×8/sida'},
+                    2:{opts:['Pallof press med rotation','Lätt medicinbollkast, rotation'],scheme:'2–3×6–8/sida'},
+                    3:{opts:['Pallof press med rotation','Medicinbollkast, rotation'],scheme:'3×6–8/sida'}}},
+        ]},
+      { id:'b-cooldown', title:'Avslutande prehab', note:'Samma varje gång, oavsett nivå.', superset:false,
+        exercises:[
+          {id:'rotatorcuff2', name:'Rotatorcuff', comment:'Rotatorcuff och skulderkontroll.',
+            levels:{1:{opts:['Bottom Up KB Press, mycket lätt'],scheme:'2×6/arm'},
+                    2:{opts:['Bottom Up KB Press'],scheme:'2×6/arm'},
+                    3:{opts:['Bottom Up KB Press'],scheme:'2×6/arm'}}},
+          {id:'kastaxel', name:'Kastaxelns hälsa', comment:'Särskilt viktigt vid hög skottvolym.',
+            levels:{1:{opts:['Sidliggande rotation, utan vikt'],scheme:'2×10–12'},
+                    2:{opts:['Sidliggande rotation eller externa rotationer'],scheme:'2×12–15'},
+                    3:{opts:['Sidliggande rotation eller externa rotationer'],scheme:'2×12–15'}}},
+        ]},
+    ]
+  }
+};
+
+const RIR_NOTE = {1:'Aldrig under 3–4 RIR.', 2:'Aldrig under 2–3 RIR.', 3:'Huvudlyft kan byggas mot 1–2 RIR.'};
+
+// ---------- Scheme parsing ----------
+// "3–4×6–8, bygg mot 2–3 RIR" -> {sets:4, unit:'reps'}
+// "2×10–15 sek/sida" -> {sets:2, unit:'sek'}
+function parseScheme(scheme){
+  const m = scheme.match(/^(\d+)(?:[–-](\d+))?\s*×/);
+  let sets = 1;
+  if(m){ sets = m[2] ? Math.max(parseInt(m[1]), parseInt(m[2])) : parseInt(m[1]); }
+  const unit = scheme.includes('sek') ? 'sek' : 'reps';
+  return {sets, unit};
+}
+
+// ---------- State & storage ----------
+const STATE_KEY = 'f16_state_v1';
+const LOG_KEY = 'f16_log_v2';
+
+function loadState(){
+  try{
+    const s = JSON.parse(localStorage.getItem(STATE_KEY));
+    if(s && s.level && s.pass) return s;
+  }catch(e){}
+  return {level:1, pass:'A', chosen:{}};
+}
+function saveState(){ try{ localStorage.setItem(STATE_KEY, JSON.stringify(state)); }catch(e){} }
+
+function loadLog(){
+  try{
+    const l = JSON.parse(localStorage.getItem(LOG_KEY));
+    if(Array.isArray(l)) return l;
+  }catch(e){}
+  return [];
+}
+function saveLog(){ try{ localStorage.setItem(LOG_KEY, JSON.stringify(log)); }catch(e){} }
+
+let state = loadState();
+let log = loadLog();
+
+function exKey(passId, ex){ return passId + ':' + ex.id; }
+
+function findExercise(passId, exId){
+  for(const b of PROGRAM[passId].blocks){
+    for(const ex of b.exercises){ if(ex.id===exId) return ex; }
+  }
+  return null;
+}
+
+function lastSessionFor(k){
+  let bestTs = 0, rows = [];
+  log.forEach(e=>{
+    if(e.exerciseKey===k){
+      if(e.sessionTs > bestTs){ bestTs = e.sessionTs; rows = [e]; }
+      else if(e.sessionTs === bestTs){ rows.push(e); }
+    }
+  });
+  rows.sort((a,b)=>a.setIndex-b.setIndex);
+  return rows.length ? rows : null;
+}
+
+// ---------- Rendering ----------
+function levelColor(l){ return l==1?'var(--l1)':l==2?'var(--l2)':'var(--l3)'; }
+
+function renderTopBar(){
+  const el = document.getElementById('levelPassBar');
+  el.innerHTML = `
+    <div class="levelbar">
+      ${[1,2,3].map(l=>`<button class="levelbtn ${state.level==l?'active':''}" data-l="${l}">NIVÅ ${l}<small>${l==1?'Teknik':l==2?'Bygg':'Damlag-nivå'}</small></button>`).join('')}
+    </div>
+    <div class="passbar">
+      <button class="passbtn ${state.pass=='A'?'active':''}" data-p="A">PASS A</button>
+      <button class="passbtn ${state.pass=='B'?'active':''}" data-p="B">PASS B</button>
+    </div>
+    <div class="rulesnote">Nivåplacering bestäms av fystränaren. <b>${RIR_NOTE[state.level]}</b> Gå aldrig till failure.</div>
+  `;
+  el.querySelectorAll('.levelbtn').forEach(b=>b.onclick=()=>{ state.level=parseInt(b.dataset.l); saveState(); renderAll(); });
+  el.querySelectorAll('.passbtn').forEach(b=>b.onclick=()=>{ state.pass=b.dataset.p; saveState(); renderAll(); });
+}
+
+function renderExercise(passId, ex){
+  const k = exKey(passId, ex);
+  const lvl = ex.levels[state.level];
+  const chosenIdx = state.chosen[k] || 0;
+  const optHtml = lvl.opts.length>1
+    ? lvl.opts.map((o,i)=>`<button class="opt ${i===chosenIdx?'chosen':''}" data-i="${i}" style="color:${i===chosenIdx?levelColor(state.level):''}">${o}</button>`).join('')
+    : `<span class="opt only">${lvl.opts[0]}</span>`;
+
+  let bodyHtml;
+  if(ex.noLog){
+    bodyHtml = `<div class="nolognote">Teknik/kraftövning — ingen vikt eller reps att logga här.</div>`;
+  }else{
+    const {sets, unit} = parseScheme(lvl.scheme);
+    const last = lastSessionFor(k);
+    const rowsHtml = Array.from({length:sets}).map((_,i)=>`
+      <div class="setrow" data-set="${i+1}">
+        <span class="setlabel">Set ${i+1}</span>
+        <input type="number" inputmode="decimal" class="w-input" placeholder="kg" />
+        <input type="number" inputmode="numeric" class="r-input" placeholder="${unit}" />
+      </div>
+    `).join('');
+    const lastHtml = last ? `<div class="lastlog">Senast (${last[0].dateStr}, Nivå ${last[0].level}): ${last.map(r=>`${r.weight?r.weight+'kg':''}${r.weight&&r.reps?'×':''}${r.reps?r.reps+(r.unit==='sek'?'s':''):''}`).filter(Boolean).join(', ')}</div>` : '';
+    bodyHtml = `
+      <div class="setrows">${rowsHtml}</div>
+      <div class="savebtnrow"><button class="save-btn">Spara</button></div>
+      ${lastHtml}
+    `;
+  }
+
+  return `
+    <div class="exercise" data-key="${k}">
+      <div class="exname">${ex.name}</div>
+      <div class="excomment">${ex.comment}</div>
+      <div class="opts">${optHtml}</div>
+      <div class="scheme" style="color:${levelColor(state.level)}">${lvl.scheme}</div>
+      ${bodyHtml}
+    </div>
+  `;
+}
+
+function renderProgram(){
+  const p = PROGRAM[state.pass];
+  const el = document.getElementById('programView');
+  el.innerHTML = `
+    <div class="passtitle"><h2>${p.title}</h2><p>${p.subtitle}</p></div>
+    ${p.blocks.map(b=>`
+      <div class="block ${b.superset?'superset':''}">
+        <div class="blockhead"><h3>${b.title}</h3>${b.superset?'<span class="ssbadge">Superset · N2–3</span>':''}</div>
+        ${b.note?`<div class="blocknote">${b.note}</div>`:''}
+        ${b.exercises.map(ex=>renderExercise(state.pass, ex)).join('')}
+      </div>
+    `).join('')}
+    <details class="rulesbox">
+      <summary>Grundregler</summary>
+      <ul>
+        <li>Teknik går alltid före belastning — oavsett nivå.</li>
+        <li>Nivå 1 tränar kroppsvikt/lätt belastning tills tekniken sitter — det är en teknikfråga, inte en tidsfråga.</li>
+        <li>Gå aldrig till failure. N1 min 3–4 RIR, N2 min 2–3 RIR, N3 max mot 1–2 RIR på huvudlyftet.</li>
+        <li>Prehab är obligatoriskt i varje pass, oavsett nivå eller träningsfrekvens.</li>
+        <li>Vid tvekan om nivå: välj nivån under snarare än att pressa på för tidigt.</li>
+      </ul>
+    </details>
+  `;
+
+  el.querySelectorAll('.exercise').forEach(card=>{
+    const k = card.dataset.key;
+    card.querySelectorAll('.opt[data-i]').forEach(btn=>{
+      btn.onclick = ()=>{
+        state.chosen[k] = parseInt(btn.dataset.i);
+        saveState();
+        renderProgram();
+      };
+    });
+    const saveBtn = card.querySelector('.save-btn');
+    if(!saveBtn) return;
+    saveBtn.onclick = ()=>{
+      const exId = k.split(':')[1];
+      const ex = findExercise(state.pass, exId);
+      const lvl = ex.levels[state.level];
+      const {unit} = parseScheme(lvl.scheme);
+      const idx = state.chosen[k] || 0;
+      const sessionTs = Date.now();
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('sv-SE');
+      let savedAny = false;
+      card.querySelectorAll('.setrow').forEach(row=>{
+        const w = row.querySelector('.w-input').value.trim();
+        const r = row.querySelector('.r-input').value.trim();
+        if(!w && !r) return;
+        savedAny = true;
+        log.push({
+          id: Date.now()+'_'+Math.random().toString(36).slice(2,7),
+          sessionTs, dateStr,
+          pass: state.pass, level: state.level,
+          exerciseKey: k, exerciseName: ex.name,
+          option: lvl.opts[idx], scheme: lvl.scheme,
+          setIndex: parseInt(row.dataset.set),
+          weight: w, reps: r, unit
+        });
+      });
+      if(!savedAny) return;
+      saveLog();
+      saveBtn.textContent = 'Sparat';
+      saveBtn.classList.add('savedflash');
+      setTimeout(()=>{ renderProgram(); }, 550);
+    };
+  });
+}
+
+function renderLogg(){
+  const el = document.getElementById('loggView');
+  if(log.length===0){
+    el.innerHTML = `<div class="emptystate">Inget loggat än.<br>Spara vikt och reps under en övning i Program-fliken för att se historik här.</div>`;
+    return;
+  }
+  // group by dateStr -> sessionTs+exerciseKey -> sets[]
+  const byDate = {};
+  log.forEach(e=>{
+    byDate[e.dateStr] = byDate[e.dateStr] || {};
+    const gk = e.sessionTs + '_' + e.exerciseKey;
+    byDate[e.dateStr][gk] = byDate[e.dateStr][gk] || {exerciseName:e.exerciseName, pass:e.pass, level:e.level, option:e.option, ts:e.sessionTs, sets:[]};
+    byDate[e.dateStr][gk].sets.push(e);
+  });
+  const dateKeys = Object.keys(byDate).sort((a,b)=>{
+    const da = new Date(a.split('.').reverse().join('-'));
+    const db = new Date(b.split('.').reverse().join('-'));
+    return db-da;
+  });
+  el.innerHTML = `
+    <div class="histactions">
+      <button id="exportBtn">Exportera logg</button>
+      <label>Importera<input type="file" id="importFile" accept="application/json"></label>
+    </div>
+    ${dateKeys.map(d=>{
+      const groups = Object.values(byDate[d]).sort((a,b)=>b.ts-a.ts);
+      return `
+      <div class="histday">
+        <h3>${d}</h3>
+        ${groups.map(g=>{
+          g.sets.sort((a,b)=>a.setIndex-b.setIndex);
+          const setsStr = g.sets.map(s=>`${s.weight?s.weight+'kg':''}${s.weight&&s.reps?'×':''}${s.reps?s.reps+(s.unit==='sek'?'s':''):''}`).filter(Boolean).join(', ');
+          return `
+            <div class="histentry">
+              <div class="hn">${g.exerciseName}<small>Pass ${g.pass} · Nivå ${g.level} · ${g.option}</small></div>
+              <div class="hv" style="color:${levelColor(g.level)}">${setsStr}</div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;}).join('')}
+  `;
+  document.getElementById('exportBtn').onclick = ()=>{
+    const blob = new Blob([JSON.stringify(log, null, 2)], {type:'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'f16-styrkelogg-'+new Date().toISOString().slice(0,10)+'.json';
+    a.click();
+  };
+  document.getElementById('importFile').onchange = (e)=>{
+    const file = e.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = ()=>{
+      try{
+        const imported = JSON.parse(reader.result);
+        if(Array.isArray(imported)){
+          const existingIds = new Set(log.map(l=>l.id));
+          imported.forEach(item=>{ if(item.id && !existingIds.has(item.id)) log.push(item); });
+          log.sort((a,b)=>a.sessionTs-b.sessionTs);
+          saveLog();
+          renderLogg();
+        }
+      }catch(err){ alert('Kunde inte läsa filen.'); }
+    };
+    reader.readAsText(file);
+  };
+}
+
+function renderAll(){
+  renderTopBar();
+  renderProgram();
+  renderLogg();
+}
+
+document.querySelectorAll('nav.tabs button').forEach(b=>{
+  b.onclick = ()=>{
+    document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const tab = b.dataset.tab;
+    document.getElementById('programView').style.display = tab==='program'?'block':'none';
+    document.getElementById('loggView').style.display = tab==='logg'?'block':'none';
+    if(tab==='logg') renderLogg();
+  };
+});
+
+try{
+  renderAll();
+}catch(err){
+  document.getElementById('programView').innerHTML =
+    '<div class="emptystate">Något gick fel när appen skulle starta:<br><b>'+err.message+'</b><br><br>Prova att öppna filen i Safari (inte i Filer-appens förhandsvisning) eller ladda den från en webblänk.</div>';
+}
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>
